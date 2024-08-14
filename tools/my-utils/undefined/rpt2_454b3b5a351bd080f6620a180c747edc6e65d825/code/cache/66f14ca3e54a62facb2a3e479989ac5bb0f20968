@@ -1,0 +1,1 @@
+{"code":"function hello() {\r\n    console.log('hello');\r\n}\r\nexport { hello };\r\nexport * from './math/index';\r\n","references":["/Users/zhangjing/zhangjing/HighPerformanceTable/tools/my-utils/src/math/index.ts"]}

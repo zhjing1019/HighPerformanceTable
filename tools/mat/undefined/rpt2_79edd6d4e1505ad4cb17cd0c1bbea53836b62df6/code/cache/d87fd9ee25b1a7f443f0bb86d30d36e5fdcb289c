@@ -1,0 +1,1 @@
+{"code":"import Matrix from './core/Matrix';\r\nexport { Matrix };\r\n","references":["/Users/zhangjing/zhangjing/HighPerformanceTable/tools/mat/src/core/Matrix.ts"]}
