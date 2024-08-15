@@ -1,47 +1,193 @@
-# rush_monorepo_demo
-利用rush.js搭建monorepo仓库的示例
+<div align="center">
+   <a href="https://github.com/VisActor#gh-light-mode-only" target="_blank">
+    <img alt="VisActor Logo" width="200" src="https://github.com/VisActor/.github/blob/main/profile/logo_500_200_light.svg"/>
+  </a>
+  <a href="https://github.com/VisActor#gh-dark-mode-only" target="_blank">
+    <img alt="VisActor Logo" width="200" src="https://github.com/VisActor/.github/blob/main/profile/logo_500_200_dark.svg"/>
+  </a>
+</div>
 
-## 目录结构
+<div align="center">
+  <h1>VTable</h1>
+</div>
 
-- **ui/**：
-  - vue2-ui：基于vite的vue2简易组件库
-  - vue3-ui：基于vite的vue3简易组件库
-- **tools**
-  - mat：基于roullup构建，ts编写的简易数学库（copy的）
-  - my-utils：基于roullup构建，ts编写的简易库（主要就是示范作用）
-- **doc**：
-  -  docs：基于vitepress的静态网页，主要用来写文档。目前只是初始样子并未做任何修改
-- **app**：
-  - my-app-vue2:  vue2网页示例
-  - my-app-vue3:  vue2网页示例
-- **common**：rushjs的相关配置
+<div align="center">
 
+VTable is not just a high-performance multidimensional data analysis table, but also a grid artist that creates art between rows and columns.
 
-> deploy.py 只是进行了docker 镜像构建和推送到远程仓库的作用 并未登录到docker，所以直接使用会失败。登录操作需要集成到ci中使用相关功能确保密码和用户名不会泄露。不能把密码等敏感参数写在脚本里面
+<p align="center">
+  <a href="https://visactor.io/vtable">Introduction</a> •
+  <a href="https://visactor.io/vtable/example">demo</a> •
+  <a href="https://visactor.io/vtable/guide/Getting_Started/Getting_Started">Tutorial</a> •
+  <a href="https://visactor.io/vtable/option/ListTable">API</a>•
+</p>
 
-## 快速体验
+![](https://github.com/visactor/vtable/actions/workflows/bug-server.yml/badge.svg)
+![](https://github.com/visactor/vtable/actions/workflows/unit-test.yml/badge.svg)
+[![npm Version](https://img.shields.io/npm/v/@visactor/vtable.svg)](https://www.npmjs.com/package/@visactor/vtable)
+[![npm Download](https://img.shields.io/npm/dm/@visactor/vtable.svg)](https://www.npmjs.com/package/@visactor/vtable)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/visactor/vtable/blob/main/LICENSE)
 
-- clone仓库
+</div>
 
-> git clone git@github.com:MFinnnne/rush_monorepo_demo.git
+<div align="center">
 
-- 进入项目目录后执行
+English| [简体中文](./README.zh-CN.md)
 
-> rush update   \# 按需安装 NPM 包
+</div>
 
-- 进入某个项目内然后build
+<div align="center">
 
-> rush rebuild  # 清理并重新构建所有项目
->
-> 或者开启监听模式下的自动build
->
-> rush te  或者 rush build:watch --to-except my-app-vue2 
+（video）
 
--  进入 my-app-vue2项目运行， 假设 package.json 内存在 "start" 指令。 (通过 "rushx" 来查看可用的命令)
+</div>
 
-> rushx serve
+# Introduction
 
-当你开启监听模式的build，当你更改 mat项目或者utils项目下的代码时就会自动更新依赖
+VTable is based on visual rendering engine [VRender](https://github.com/VisActor/VRender).
 
+The core capabilities are as follows:
 
+1. Extreme performance: Supports fast computation and rendering of millions of data points.
+2. Multidimensional analysis: Automatically analyzes and presents multidimensional data.
+3. Strong expressiveness: Provides flexible and powerful graphic capabilities, seamlessly integrating with charts of [VChart](https://github.com/VisActor/VChart).
 
+# Repository Introduction
+
+This repository includes the following packages:
+
+1. packages/vtable: The core code repository of VTable
+2. docs: Include VTable site tutorials, demos,apis and options, and also contains all Chinese and English documents.
+
+# Usage
+
+## Installation
+
+[npm package](https://www.npmjs.com/package/@visactor/vtable)
+
+```bash
+// npm
+npm install @visactor/vtable
+
+// yarn
+yarn add @visactor/vtable
+```
+
+## Quick Start
+
+```javascript
+// this demo you can run on codesanbox https://codesandbox.io/s/vtable-simple-demo-g8q738
+import * as VTable from '@visactor/vtable';
+
+const columns = [
+  {
+    field: 'Order ID',
+    caption: 'Order ID'
+  },
+  {
+    field: 'Customer ID',
+    caption: 'Customer ID'
+  },
+  {
+    field: 'Product Name',
+    caption: 'Product Name'
+  },
+  {
+    field: 'Sales',
+    caption: 'Sales'
+  },
+  {
+    field: 'Profit',
+    caption: 'Profit'
+  }
+];
+
+const option = {
+  container: document.getElementById(CONTAINER_ID),
+  records: [
+    {
+      'Order ID': 'CA-2018-156720',
+      'Customer ID': 'JM-15580',
+      'Product Name': 'Bagged Rubber Bands',
+      Sales: '3.024',
+      Profit: '-0.605'
+    },
+    {
+      'Order ID': 'CA-2018-115427',
+      'Customer ID': 'EB-13975',
+      'Product Name': 'GBC Binding covers',
+      Sales: '20.72',
+      Profit: '6.475'
+    }
+    // ...
+  ],
+  columns
+};
+const tableInstance = new VTable.ListTable(option);
+```
+
+##
+
+[More demos and detailed tutorials](https://visactor.io/vtable)
+
+# ⌨️ Development
+
+First of all, please install [@microsoft/rush](https://rushjs.io/pages/intro/get_started/)
+
+```bash
+$ npm i --global @microsoft/rush
+```
+
+Then clone locally:
+
+```bash
+# clone
+$ git clone git@github.com:VisActor/VTable.git
+$ cd VTable
+# install dependencies
+$ rush update
+# start vtable demo
+$ cd packages/vtable
+# execute in file path: ./packages/vtable
+$ rushx demo
+# start site development server, execute in file path: ./
+$ rush docs
+# after execut git commit, please run the following command to update the change log. Please execute in file path: ./
+$ rush change-all
+```
+
+# 📖 Documents
+
+After installation & clone & update, run docs to preview VTable documents locally.
+
+```bash
+# start vtable document server. execute in file path: ./
+$ rush docs
+```
+
+## 🔗 Related Links
+
+- [Official website](https://visactor.io/vtable)
+- [Usage Trend](https://npm-compare.com/@visactor/vtable)
+
+# 💫 Ecosystem
+
+| Project                                                                      | Description               |
+| ---------------------------------------------------------------------------- | ------------------------- |
+| [React-VTable](https://www.visactor.io/vtable/guide/Developer_Ecology/react) | VTable in React component |
+
+# ⭐️ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=visactor/vtable&type=Date)](https://star-history.com/#visactor/vtable&Date)
+
+# 🤝 Contribution
+
+If you would like to contribute, please read the [Code of Conduct ](./CODE_OF_CONDUCT.md) and [ Guide](./CONTRIBUTING.md) first。
+
+Small streams converge to make great rivers and seas!
+
+<a href="https://github.com/visactor/vtable/graphs/contributors"><img src="https://contrib.rocks/image?repo=visactor/vtable" /></a>
+
+# License
+
+[MIT License](./LICENSE)

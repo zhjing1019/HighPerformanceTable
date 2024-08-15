@@ -29,6 +29,22 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
+output
+dist
+esm
+es
+cjs
+build
+build-es5
+*.zip
+
+*.zip
+stats.html
+report.html
+
+coverage/
+
+*.local.ts
 
 # Dependency directories
 node_modules/
@@ -71,7 +87,22 @@ common/autoinstallers/*/.npmrc
 
 # Heft temporary files
 .heft
-dist/
-.vscode/
-.rush/
-**/*/_tmp*
+
+# vtable-doc temporary files
+# packages/vtable-docs/public/js
+# packages/vtable-docs/public/css
+packages/vtable-docs/public/zh/documents
+packages/vtable-docs/public/en/documents
+packages/vtable-docs/public/*.html
+
+# git-hook
+common/scripts/pre-commit
+
+# generated documents
+docs/public/documents
+
+packages/vtable/nodejs/*.png
+
+# build
+.rollup.cache/
+tsconfig.tsbuildinfo

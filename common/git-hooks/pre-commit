@@ -1,8 +1,38 @@
 #!/bin/sh
-# 在 "git commit" 执行时，该钩子会被调用，并且没有参数。如果该钩子想要阻止提交，那么它应该以返回非零状态推出。
 
-# Invoke the "rush prettier" custom command to reformat files whenever they
-# are committed. The command is defined in common/config/rush/command-line.json
-# and uses the "rush-prettier" autoinstaller.
-# 当 commit 时调用自定义指令 "rush prettier" 来重新格式化文件。该指令定义在 common/config/rush/command-line.json, 并通过 "rush-prettier" 自动安装并使用。
-node common/scripts/install-run-rush.js prettier || exit $?
+
+# log rush change to stdout
+STAGE_FILES=$(git diff --cached --name-only)
+
+if [[ $STAGE_FILES != "" ]] ; then
+  changedFiles=''
+  # 红色文本的 ANSI 转义序列
+  RED='\033[0;31m'
+  # 大字体的 ANSI 转义序列
+  BIG_FONT='\033[1m'
+
+  # 重置颜色的 ANSI 转义序列
+  RESET='\033[0m'
+
+  for fileName in $STAGE_FILES;do
+    if [[ $fileName =~ ^packages/.*\/src/.* ]]; then
+      changedFiles="${changedFiles}
+       ${RED}${fileName}${RESET}"
+    fi
+  done;
+
+  if [[ $changedFiles != "" ]] ; then
+
+    echo "
+    [Notice]: please check, do you need to run ${RED}${BIG_FONT}rush change-all${RESET} to generate changelog, 
+    you has modified some src files, include: 
+    ${changedFiles}
+    "
+  fi
+fi
+
+node common/scripts/install-run-rush.js lint-staged || exit $? #++
+
+if [ -f "common/scripts/pre-commit" ]; then
+  common/scripts/pre-commit
+fi
