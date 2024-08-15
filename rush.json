@@ -18,6 +18,11 @@
   "variants": [],
   "projects": [
     {
+      "packageName": "high-performance-table",
+      "projectFolder": "packages/high-performance-table",
+      "shouldPublish": true
+    },
+    {
       "packageName": "my-test-utils",
       "projectFolder": "tools/my-utils",
       "shouldPublish": true
