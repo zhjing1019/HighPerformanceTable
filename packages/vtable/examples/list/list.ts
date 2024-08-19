@@ -16,6 +16,7 @@ const generatePersons = count => {
 };
 
 export function createTable() {
+  // 设置2000条数据表格
   const records = generatePersons(2000);
   const columns: VTable.ColumnsDefine = [
     {
@@ -228,14 +229,4 @@ export function createTable() {
       clearInterval(intervalId);
     }
   }, 3000);
-  // tableInstance.on('sort_click', args => {
-  //   tableInstance.updateSortState(
-  //     {
-  //       field: args.field,
-  //       order: Date.now() % 3 === 0 ? 'desc' : Date.now() % 3 === 1 ? 'asc' : 'normal'
-  //     },
-  //     false
-  //   );
-  //   return false; //return false代表不执行内部排序逻辑
-  // });
 }

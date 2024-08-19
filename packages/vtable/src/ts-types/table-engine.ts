@@ -1,3 +1,7 @@
+/**
+ * 表格引擎
+ * @zhangjing 2024/08/15
+ */
 import type { RectProps, MaybePromiseOrUndefined, IDimensionInfo, SortOrder, BaseCellInfo, CellInfo } from './common';
 import type { ColumnIconOption, SvgIcon } from './icon';
 export type { HeaderData } from './list-table/layout-map/api';
@@ -65,7 +69,7 @@ export type HeightModeDef = 'standard' | 'adaptive' | 'autoHeight';
 export type WidthAdaptiveModeDef = 'only-body' | 'all';
 export type HeightAdaptiveModeDef = 'only-body' | 'all';
 export type ShowColumnRowType = 'column' | 'row' | 'none' | 'all';
-/** 单元格所处表格哪部分 */
+/** 单元格所处表格哪部分：表格分四个部分body、rowHeader、columnHeader、cornerHeader */
 export type CellLocation = 'body' | 'rowHeader' | 'columnHeader' | 'cornerHeader';
 export type CellSubLocation =
   | 'body'
@@ -84,7 +88,10 @@ export interface SelectAllOnCtrlAOption {
   disableHeaderSelect?: boolean;
   disableRowSeriesNumberSelect?: boolean;
 }
-
+/**
+ * 表格键盘属性
+ * ? 表示可选属性
+ */
 export interface TableKeyboardOptions {
   /** tab键 默认为true。开启tab键移动选中单元格，如果当前是在编辑单元格 则移动到下一个单元格也是编辑状态 */
   moveFocusCellOnTab?: boolean;
@@ -166,6 +173,9 @@ export interface DataSourceAPI {
   hierarchyExpandLevel: number;
 }
 
+/**
+ * 排序接口
+ */
 export interface SortState {
   /** 排序依据字段 */
   field: FieldDef;
@@ -476,6 +486,10 @@ export interface InlineAPI {
   canBreak: () => boolean;
 }
 
+/**
+ * 表格内容属性
+ * readonly表示只读属性，不可更改
+ */
 export interface CellContext {
   readonly col: number;
   readonly row: number;

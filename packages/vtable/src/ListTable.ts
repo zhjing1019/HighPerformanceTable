@@ -37,45 +37,11 @@ import { cloneDeepSpec } from '@visactor/vutils-extension';
 import { setCellCheckboxState } from './state/checkbox/checkbox';
 import type { IEmptyTipComponent } from './components/empty-tip/empty-tip';
 import { Factory } from './core/factory';
-// import {
-//   registerAxis,
-//   registerEmptyTip,
-//   registerLegend,
-//   registerMenu,
-//   registerTitle,
-//   registerTooltip
-// } from './components';
-// import {
-//   registerChartCell,
-//   registerCheckboxCell,
-//   registerImageCell,
-//   registerProgressBarCell,
-//   registerRadioCell,
-//   registerSparkLineCell,
-//   registerTextCell,
-//   registerVideoCell
-// } from './scenegraph/group-creater/cell-type';
-
-// registerAxis();
-// registerEmptyTip();
-// registerLegend();
-// registerMenu();
-// registerTitle();
-// registerTooltip();
-
-// registerChartCell();
-// registerCheckboxCell();
-// registerImageCell();
-// registerProgressBarCell();
-// registerRadioCell();
-// registerSparkLineCell();
-// registerTextCell();
-// registerVideoCell();
-
 export class ListTable extends BaseTable implements ListTableAPI {
   declare internalProps: ListTableProtected;
   /**
    * 用户配置的options 只读 勿直接修改
+   * ListTableConstructorOptions为表格引擎配置
    */
   declare options: ListTableConstructorOptions;
   showHeader = true;
