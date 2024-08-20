@@ -1,3 +1,7 @@
+/**
+ * 基础表格配置
+ * @zhangjing 2024/08/20
+ */
 import type { IBoundsLike, ITextSize } from '@visactor/vutils';
 import type {
   RectProps,
@@ -264,6 +268,9 @@ export interface IBaseTableProtected {
   // 已使用一行的高度填充所有行
   useOneRowHeightFillAll?: boolean;
 }
+/**
+ * 表格的基础配置
+ */
 export interface BaseTableConstructorOptions {
   // /** 指定表格的行数 */
   // rowCount?: number;
@@ -307,7 +314,8 @@ export interface BaseTableConstructorOptions {
   container?: HTMLElement | null;
 
   /**
-   * 调整列宽 可操作范围。'all' | 'none' | 'header' | 'body'; 整列间隔线|禁止调整|只能在表头处间隔线|只能在body间隔线
+   * 调整列宽 可操作范围。'all' | 'none' | 'header' | 'body';
+   * 调整列宽 可操作范围。 整列间隔线|禁止调整|只能在表头处间隔线|只能在body间隔线
    */
   columnResizeMode?: 'all' | 'none' | 'header' | 'body';
   rowResizeMode?: 'all' | 'none' | 'header' | 'body';
