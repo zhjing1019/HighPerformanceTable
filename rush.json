@@ -25,6 +25,14 @@
   ],
   "projects": [
     {
+      "packageName": "@visactor/element-table",
+      "projectFolder": "packages/element-table",
+      "tags": [
+        "package"
+      ],
+      "shouldPublish": false
+    },
+    {
       "packageName": "@visactor/vtable",
       "projectFolder": "packages/vtable",
       "tags": [
