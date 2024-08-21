@@ -1,8 +1,7 @@
 <template>
   <div class="table">
-    <el-table :data="tableData">
+    <el-table ref="tableRef" :data="tableData">
       <el-table-column v-for="(item, index) in columns" :key="index" :prop="item.field" :label="item.title" :width="item.width">
-
       </el-table-column>
     </el-table>
   </div>
@@ -14,6 +13,8 @@ export default {
   components: {},
   data() {
     return {
+      // 初始化时间
+      startTime: 0,
       tableData: [],
       columns: [
         {
@@ -70,10 +71,27 @@ export default {
       ]
     };
   },
-  created() {
-    this.tableData = this.generatePersons(10);
+  mounted() {
+    this.tableData = this.generatePersons(100);
+    this.$nextTick(() => {
+      // 表格渲染完成后的回调
+      this.onTableRenderComplete();
+    });
   },
   methods: {
+    onTableRenderComplete() {
+      // 这个方法在表格渲染完成后被调用
+      this.$nextTick(() => {
+        // 在这里执行你需要的操作，比如计算表格的某些特性
+        this.logRenderTime();
+      });
+    },
+    logRenderTime() {
+      const startTime = this.startTime;
+      const endTime = typeof window !== 'undefined' ? window.performance.now() : 0;
+      const time = endTime - startTime;
+      console.log(`setRecords cost time ${time} ms`);
+    },
     generatePersons(count) {
       let self = this;
       const arr = [];
@@ -94,6 +112,8 @@ export default {
         };
         arr.push(item);
       }
+      this.startTime = typeof window !== 'undefined' ? window.performance.now() : 0;
+
       return arr;
     },
     generateRandomString(length) {
