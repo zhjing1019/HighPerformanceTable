@@ -89,7 +89,7 @@ export default {
     logRenderTime() {
       const startTime = this.startTime;
       const endTime = typeof window !== 'undefined' ? window.performance.now() : 0;
-      const time = endTime - startTime;
+      const time = (endTime - startTime).toFixed(2);
       console.log(`setRecords cost time ${time} ms`);
     },
     generatePersons(count) {
