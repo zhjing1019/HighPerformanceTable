@@ -72,7 +72,7 @@ export default {
     };
   },
   mounted() {
-    this.tableData = this.generatePersons(2000);
+    this.tableData = this.generatePersons(1000);
     this.$nextTick(() => {
       // 表格渲染完成后的回调
       this.onTableRenderComplete();

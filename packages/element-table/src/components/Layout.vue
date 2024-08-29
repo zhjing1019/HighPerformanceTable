@@ -23,7 +23,7 @@ export default {
   components: { ElementTable, TableTwoThousand },
   data() {
     return {
-      current: 'ElementTable',
+      current: 'TableTwoThousand',
       layoutList: [
         {
           // 普通的element表格
