@@ -5,7 +5,6 @@ import * as VTable from '@visactor/vtable';
 import * as VChart from '@visactor/vchart';
 import * as VTableEditors from '@visactor/vtable-editors';
 import { downloadCsv, exportVTableToCsv, downloadExcel, exportVTableToExcel } from '@visactor/vtable-export';
-import { SearchComponent } from '@visactor/vtable-search';
 import * as ReactVTable from '@visactor/react-vtable';
 import * as InulaVTable from '@visactor/openinula-vtable';
 import { App } from './app';
@@ -23,7 +22,6 @@ import '@arco-design/web-react/dist/css/arco.css';
 (window as any).exportVTableToCsv = exportVTableToCsv;
 (window as any).downloadExcel = downloadExcel;
 (window as any).exportVTableToExcel = exportVTableToExcel;
-(window as any).SearchComponent = SearchComponent;
 
 (window as any).CONTAINER_ID = 'chart';
 (window as any).React = React;

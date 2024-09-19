@@ -16,7 +16,6 @@
     "@visactor/openinula-vtable": "workspace:*",
     "@visactor/vtable-editors": "workspace:*",
     "@visactor/vtable-export": "workspace:*",
-    "@visactor/vtable-search": "workspace:*",
     "buble": "^0.20.0",
     "@visactor/vchart": "1.11.10",
     "markdown-it": "^13.0.0",
