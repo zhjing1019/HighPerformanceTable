@@ -82,15 +82,15 @@
       ],
       "shouldPublish": false
     },
-    {
-      "packageName": "@visactor/react-vtable",
-      "projectFolder": "packages/react-vtable",
-      "tags": [
-        "package"
-      ],
-      "shouldPublish": true,
-      "versionPolicyName": "vtableMain"
-    },
+    // {
+    //   "packageName": "@visactor/react-vtable",
+    //   "projectFolder": "packages/react-vtable",
+    //   "tags": [
+    //     "package"
+    //   ],
+    //   "shouldPublish": true,
+    //   "versionPolicyName": "vtableMain"
+    // },
     {
       "packageName": "@visactor/openinula-vtable",
       "projectFolder": "packages/openinula-vtable",

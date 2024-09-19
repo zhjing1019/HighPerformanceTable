@@ -596,13 +596,6 @@
       },
       "children": [
         {
-          "path": "react",
-          "title": {
-            "zh": "React-VTable",
-            "en": "React-VTable"
-          }
-        },
-        {
           "path": "react-custom-component",
           "title": {
             "zh": "React自定义组件",

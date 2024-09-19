@@ -122,9 +122,6 @@
             "comment": "feat: add renderDefault prop in react customLayout component"
           },
           {
-            "comment": "feat: support multiple columns tag in react-vtable"
-          },
-          {
             "comment": "fix: fix axes default config in scatter chart #2071"
           }
         ]
@@ -269,12 +266,6 @@
           },
           {
             "comment": "feat: add indent in vtable-export"
-          },
-          {
-            "comment": "feat: add CustomComponent in react-vtable"
-          },
-          {
-            "comment": "feat: add CustomLayout component in react-vtable"
           },
           {
             "comment": "fix: fix custom width problem #1905"
@@ -732,9 +723,6 @@
           },
           {
             "comment": "fix: when copy blank cell paste not work #1646\n\n"
-          },
-          {
-            "comment": "feat: add CustomComponent in react-vtable"
           },
           {
             "comment": "fix: fix custom merge cell size update #1636"
@@ -1335,9 +1323,6 @@
             "comment": "fix-contextMenuItems-add-col-param"
           },
           {
-            "comment": "fix: add skipFunctionDiff in react-vtable"
-          },
-          {
             "comment": "refactor: remove Circular dependency\n\n"
           }
         ]
@@ -1381,9 +1366,6 @@
           },
           {
             "comment": "fix: merge cell update in setDropDownMenuHighlight()"
-          },
-          {
-            "comment": "fix: fix react-vtable display error in react strict mode #990"
           }
         ]
       }
@@ -1653,9 +1635,6 @@
         "none": [
           {
             "comment": "feat: add cell image table export"
-          },
-          {
-            "comment": "fix: fix jsx parse error in react-vtable"
           }
         ]
       }
@@ -2092,9 +2071,6 @@
           },
           {
             "comment": "feat: edit text value with inputEditor\n\n"
-          },
-          {
-            "comment": "feat: add react-vtable"
           }
         ],
         "patch": [
