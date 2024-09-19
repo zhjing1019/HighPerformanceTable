@@ -4,7 +4,6 @@ import Inula from 'openinula';
 import * as VTable from '@visactor/vtable';
 import * as VChart from '@visactor/vchart';
 import * as VTableEditors from '@visactor/vtable-editors';
-import * as InulaVTable from '@visactor/openinula-vtable';
 import { App } from './app';
 import * as ArcoDesign from '@arco-design/web-react';
 import * as ArcoDesignIcon from '@arco-design/web-react/icon';
@@ -21,7 +20,6 @@ import '@arco-design/web-react/dist/css/arco.css';
 (window as any).ReactDom = ReactDOM;
 
 (window as any).Inula = Inula;
-(window as any).InulaVTable = InulaVTable;
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>

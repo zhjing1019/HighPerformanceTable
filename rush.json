@@ -81,15 +81,15 @@
         "share"
       ],
       "shouldPublish": false
-    },
-    {
-      "packageName": "@visactor/openinula-vtable",
-      "projectFolder": "packages/openinula-vtable",
-      "tags": [
-        "package"
-      ],
-      "shouldPublish": true,
-      "versionPolicyName": "vtableMain"
     }
+    // {
+    //   "packageName": "@visactor/openinula-vtable",
+    //   "projectFolder": "packages/openinula-vtable",
+    //   "tags": [
+    //     "package"
+    //   ],
+    //   "shouldPublish": true,
+    //   "versionPolicyName": "vtableMain"
+    // }
   ]
 }

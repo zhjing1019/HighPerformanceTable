@@ -12,7 +12,6 @@
   "dependencies": {
     "@arco-design/web-react": "2.60.2",
     "@visactor/vtable": "workspace:*",
-    "@visactor/openinula-vtable": "workspace:*",
     "@visactor/vtable-editors": "workspace:*",
     "buble": "^0.20.0",
     "@visactor/vchart": "1.11.10",
