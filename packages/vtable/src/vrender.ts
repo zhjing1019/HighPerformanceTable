@@ -1,3 +1,6 @@
+/**
+ * render
+ */
 import { loadPoptip } from '@visactor/vrender-components';
 import '@visactor/vrender-core';
 import { container, isBrowserEnv, isNodeEnv, preLoadAllModule } from '@visactor/vrender-core';
@@ -5,26 +8,15 @@ import {
   loadBrowserEnv,
   loadNodeEnv,
   registerArc,
-  registerArc3d,
-  registerArea,
   registerCircle,
-  registerGlyph,
   registerGroup,
   registerImage,
   registerLine,
-  registerPath,
-  registerPolygon,
-  registerPyramid3d,
   registerRect,
-  registerRect3d,
   registerRichtext,
-  registerShadowRoot,
   registerSymbol,
   registerText,
-  registerWrapText
 } from '@visactor/vrender-kits';
-// 导出版本号
-// export const version = __VERSION__;
 
 let registed = false;
 export function registerForVrender() {
@@ -41,24 +33,14 @@ export function registerForVrender() {
     loadNodeEnv(container);
   }
   registerArc();
-  // registerArc3d();
-  // registerArea();
   registerCircle();
-  // registerGlyph();
   registerGroup();
   registerImage();
   registerLine();
-  // registerPath();
-  // registerPolygon();
-  // registerPyramid3d();
   registerRect();
-  // registerRect3d();
   registerRichtext();
-  // registerShadowRoot();
   registerSymbol();
   registerText();
-  // registerWrapText();
-
   loadPoptip();
 }
 

@@ -1,3 +1,6 @@
+/**
+ * theme
+ */
 /* eslint-disable sort-imports */
 import { extend, getIgnoreCase } from './tools/helper';
 import darkTheme from './themes/DARK';
@@ -21,7 +24,7 @@ const builtin: { [key: string]: TableTheme } = {
   DARK,
   BRIGHT
 };
-// let defTheme = DEFAULT;
+
 export const theme = { TableTheme };
 export function of(value: ITableThemeDefine | string | undefined | null): TableTheme | null {
   if (!value) {

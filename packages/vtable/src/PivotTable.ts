@@ -1,10 +1,8 @@
 import type {
   FieldData,
   FieldDef,
-  FieldFormat,
   PivotTableAPI,
   SortRules,
-  PivotSortState,
   CellAddress,
   ICellHeaderPaths,
   DropDownMenuEventInfo,
@@ -24,7 +22,7 @@ import { HierarchyState, SortType } from './ts-types';
 import { PivotHeaderLayoutMap } from './layout/pivot-header-layout';
 import { FlatDataToObjects } from './dataset/flatDataToObject';
 import { PIVOT_TABLE_EVENT_TYPE } from './ts-types/pivot-table/PIVOT_TABLE_EVENT_TYPE';
-import { cellInRange, emptyFn } from './tools/helper';
+import { cellInRange } from './tools/helper';
 import { Dataset } from './dataset/dataset';
 import { BaseTable } from './core/BaseTable';
 import type { BaseTableAPI, HeaderData, PivotTableProtected } from './ts-types/base-table';
@@ -56,7 +54,6 @@ export class PivotTable extends BaseTable implements PivotTableAPI {
   }[];
   dataset?: Dataset; //数据处理对象  开启数据透视分析的表
   flatDataToObjects?: FlatDataToObjects; //数据处理对象 聚合后的flat数据 转成便于查询的行列二维数组
-  // drillMenu: Menu; //上卷下钻的按钮
   // eslint-disable-next-line default-param-last
   constructor(options: PivotTableConstructorOptions);
   constructor(container: HTMLElement, options: PivotTableConstructorOptions);
